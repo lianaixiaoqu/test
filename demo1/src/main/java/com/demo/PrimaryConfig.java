@@ -1,8 +1,5 @@
 package com.demo;
 
-/**
- * Created by Downey.hz on 2016/9/23..
- */
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.orm.jpa.JpaProperties;
@@ -25,7 +22,7 @@ import java.util.Map;
 @EnableJpaRepositories(
         entityManagerFactoryRef="entityManagerFactoryPrimary",
         transactionManagerRef="transactionManagerPrimary",
-        basePackages= { "com.demo.domain.p" }) //设置Repository所在位置
+        basePackages= { "com.didispace.domain.p" }) //设置Repository所在位置
 public class PrimaryConfig {
 
     @Autowired
@@ -44,7 +41,7 @@ public class PrimaryConfig {
         return builder
                 .dataSource(primaryDataSource)
                 .properties(getVendorProperties(primaryDataSource))
-                .packages("com.demo.domain.p") //设置实体类所在位置
+                .packages("com.didispace.domain.p") //设置实体类所在位置
                 .persistenceUnit("primaryPersistenceUnit")
                 .build();
     }
