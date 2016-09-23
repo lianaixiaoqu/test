@@ -1,4 +1,4 @@
-package com.demo.domain;
+package com.demo.domain.p;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

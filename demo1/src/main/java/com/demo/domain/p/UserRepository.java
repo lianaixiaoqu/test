@@ -1,6 +1,6 @@
-package com.demo.repository;
+package com.demo.domain.p;
 
-import com.demo.domain.User;
+import com.demo.domain.p.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
