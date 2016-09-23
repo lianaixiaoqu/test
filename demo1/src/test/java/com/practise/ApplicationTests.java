@@ -16,6 +16,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @SpringApplicationConfiguration(Application.class)
 public class ApplicationTests {
 
+
     @Autowired
     private UserRepository userRepository;
     @Autowired
@@ -24,17 +25,24 @@ public class ApplicationTests {
     @Test
     public void test() throws Exception {
 
-        userRepository.save(new User("aaa", 10));
-        userRepository.save(new User("bbb", 20));
-        userRepository.save(new User("ccc", 30));
-        userRepository.save(new User("ddd", 40));
-        userRepository.save(new User("eee", 50));
+        User user=new User();
+        user.setAge(1);
+        user.setId(2);
+        user.setLoginName("11");
+        user.setName("11");
+        user.setPassword("223");
+        userRepository.save(user);
+
+        Message  message=new Message();
+        message.setName("asd");
+        message.setId(11);
+        message.setContent("asda");
+        message.setMessage("asd");
 
         Assert.assertEquals(5, userRepository.findAll().size());
 
-        messageRepository.save(new Message("o1", "aaaaaaaaaa"));
-        messageRepository.save(new Message("o2", "bbbbbbbbbb"));
-        messageRepository.save(new Message("o3", "cccccccccc"));
+        messageRepository.save(message);
+
 
         Assert.assertEquals(3, messageRepository.findAll().size());
 
